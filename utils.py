@@ -1,10 +1,11 @@
 # Shared helpers (Member 1 - Team Lead)
+import streamlit as st
 from google import genai
 from google.genai import types
 
 MODEL = "gemini-3.1-flash-lite"
 
-
+@st.cache_resource
 def get_client(api_key: str):
     return genai.Client(api_key=api_key)
 
